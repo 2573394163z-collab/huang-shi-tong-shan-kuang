@@ -1,15 +1,11 @@
-import { STATE } from '../STATE';
+import { STATE } from '../STATE'
 
 const Template = {
   publicPath: STATE.PUBLIC_PATH,
   viewState: 'orbit',
   cameras: {
     orbitCamera: {
-      position: [
-        STATE.initialState.position[0],
-        STATE.initialState.position[1],
-        STATE.initialState.position[2],
-      ],
+      position: [STATE.initialState.position[0], STATE.initialState.position[1], STATE.initialState.position[2]],
       near: 1,
       far: 10000000,
       fov: 60,
@@ -19,11 +15,7 @@ const Template = {
     orbitControls: {
       autoRotate: false,
       autoRotateSpeed: 1,
-      target: [
-        STATE.initialState.target[0],
-        STATE.initialState.target[1],
-        STATE.initialState.target[2],
-      ],
+      target: [STATE.initialState.target[0], STATE.initialState.target[1], STATE.initialState.target[2]],
       // minDistance: 16,
       // maxDistance: 2500,
       maxPolarAngle: Math.PI * 0.49,
@@ -33,22 +25,24 @@ const Template = {
     },
   },
   lights: {
-    directionLights: [{
-      color: 0xFFDCB2,
-      intensity: 1.2,
-      position: [26, 40, 20],
-      mapSize: [6656, 6656],
-      near: -632,
-      far: 500,
-      bias: -0.0007,
-      distance: 900,
-      // top: 945,
-      // right: 1130,
-      // bottom: -902,
-      // left: -1222,
-      target: [0, 0, 0],
-      castShadow: true,
-    }],
+    directionLights: [
+      {
+        color: 0xffdcb2,
+        intensity: 1.2,
+        position: [26, 40, 20],
+        mapSize: [6656, 6656],
+        near: -632,
+        far: 500,
+        bias: -0.0007,
+        distance: 900,
+        // top: 945,
+        // right: 1130,
+        // bottom: -902,
+        // left: -1222,
+        target: [0, 0, 0],
+        castShadow: true,
+      },
+    ],
     ambientLight: {
       color: '#ffffff',
       intensity: 0.2,
@@ -64,9 +58,7 @@ const Template = {
       panoramaEncoding: 3001,
     },
   },
-  modelUrls: [
-    '/model/model.glb',
-  ],
+  modelUrls: ['/model/1.glb'],
   hdrUrls: ['/hdr/1.hdr'],
   enableShadow: true,
   antiShake: false,
@@ -126,6 +118,6 @@ const Template = {
     show: true,
     type: 10,
   },
-};
+}
 
-export default Template;
+export default Template

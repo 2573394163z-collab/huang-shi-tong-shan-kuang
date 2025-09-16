@@ -4,6 +4,7 @@ import { CACHE } from '../CACHE.js'
 import { GUI } from '../GUI.js'
 import { STATE } from '../STATE.js'
 import TU from '../threeUtils'
+import { maoDian } from '../handle/maoDian.js'
 
 export default function onLoad(container) {
   container.loadingBar.style.visibility = 'hidden'
@@ -16,40 +17,41 @@ export default function onLoad(container) {
   window.GUI = GUI
   TU.init(container, Bol3D)
   init()
-  theatreDemo();
+  theatreDemo()
 }
 
 function init() {
   // 粒子初始化
-  initParticle()
+  // initParticle()
+  maoDian()
 }
 
-function initParticle() {
-  const particlesOpts = {
-    uuid: '520FE4E4-71A0-4049-98C1-4001C6E99CAB',
-    name: 'Particle',
-    type: 'smoke',
-    options: {
-      position: [0, 0, 0],
-      direction: [0, 1, 0],
-      scale: [500, 500, 500],
-      renderOrder: 1,
-      visible: true,
-      color: '#cccccc',
-      size: 100,
-      width: 0,
-      height: 0,
-      depth: 0,
-      numbers: 100,
-      type: 'smoke',
-    },
-  }
+// function initParticle() {
+//   // const particlesOpts = {
+//   //   uuid: '520FE4E4-71A0-4049-98C1-4001C6E99CAB',
+//   //   name: 'Particle',
+//   //   type: 'smoke',
+//   //   options: {
+//   //     position: [0, 0, 0],
+//   //     direction: [0, 1, 0],
+//   //     scale: [500, 500, 500],
+//   //     renderOrder: 1,
+//   //     visible: true,
+//   //     color: '#cccccc',
+//   //     size: 100,
+//   //     width: 0,
+//   //     height: 0,
+//   //     depth: 0,
+//   //     numbers: 100,
+//   //     type: 'smoke',
+//   //   },
+//   // }
 
-  const particles = new Bol3D.Primitives.BaseParticles(particlesOpts.options)
-  const smokeMap = new Bol3D.TextureLoader().load(`/assets/3d/editor/smoke.png`)
-  particles.material.uniforms.map.value = smokeMap
-  particles.material.uniforms.useMap.value = 1
-  particles.scale.set(500, 500, 500)
-  particles.startSmokeSimulation()
-  CACHE.container.particlesGroup.add(particles)
-}
+//   // const particles = new Bol3D.Primitives.BaseParticles(particlesOpts.options)
+//   // const smokeMap = new Bol3D.TextureLoader().load(`/assets/3d/editor/smoke.png`)
+//   // particles.material.uniforms.map.value = smokeMap
+//   // particles.material.uniforms.useMap.value = 1
+//   // particles.scale.set(500, 500, 500)
+//   // particles.startSmokeSimulation()
+//   // CACHE.container.particlesGroup.add(particles)
+// }

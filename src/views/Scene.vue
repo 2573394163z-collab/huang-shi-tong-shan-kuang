@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { sceneOnLoad,loadSceneByJSON } from '@/ktJS';
+import { sceneOnLoad, loadSceneByJSON } from '@/ktJS'
 
-const sceneContainerRef = ref(null);
+const sceneContainerRef = ref(null)
 
 onMounted(() => {
-  // sceneOnLoad({
+  sceneOnLoad({
+    domElement: sceneContainerRef.value,
+    callback: () => {
+      //
+    },
+  })
+
+  // loadSceneByJSON({
   //   domElement: sceneContainerRef.value,
   //   callback: () => {
   //     //
   //   },
   // });
-
-  loadSceneByJSON({
-    domElement: sceneContainerRef.value,
-    callback: () => {
-      //
-    },
-  });
-});
+})
 </script>
 
 <template>
