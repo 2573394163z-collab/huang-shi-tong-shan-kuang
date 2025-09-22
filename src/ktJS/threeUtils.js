@@ -259,7 +259,7 @@ function onFadeModel(target, options = {}) {
     side: Bol3D.DoubleSide, // 双面显示
     // 粗糙度
     roughness: 0,
-    envMap: container.envMap, // 环境贴图
+    // envMap: container.envMap, // 环境贴图
   })
   // 建筑线材质
   let lineMaterial = new Bol3D.LineBasicMaterial({
