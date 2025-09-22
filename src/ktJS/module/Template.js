@@ -50,7 +50,7 @@ const Template = {
   },
   background: {
     type: 'panorama',
-    value: ['/editor/2.jpg'],
+    value: ['/hdr/48.jpg'],
     options: {
       scale: 1,
       rotation: [0, 0, 0],

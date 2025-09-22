@@ -34,7 +34,7 @@ function initOrigin() {
   const mat = new Bol3D.MeshPhongMaterial({ color: 0xff0000 })
   const mesh = new Bol3D.Mesh(geo, mat)
   mesh.name = '基准点'
-  mesh.visible = true
+  mesh.visible = false
   CACHE.group.add(mesh)
   CACHE.container.scene.add(CACHE.group)
 }
