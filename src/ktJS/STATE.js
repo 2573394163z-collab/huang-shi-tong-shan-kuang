@@ -1,6 +1,6 @@
 const PUBLIC_PATH = './assets/3d'
 const initialState = {
-  position: [-1.39, 800, 156],
+  position: [-1.39, 1200, 156],
   target: [-1.29, 0, 42.86],
 }
 

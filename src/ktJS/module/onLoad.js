@@ -24,8 +24,20 @@ function init() {
   // 粒子初始化
   // initParticle()
   maoDian()
+  initOrigin()
 }
-
+function initOrigin() {
+  // const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2)
+  // const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+  // const point = new THREE.Mesh(geometry, material)
+  const geo = new Bol3D.SphereGeometry(10, 10, 10)
+  const mat = new Bol3D.MeshPhongMaterial({ color: 0xff0000 })
+  const mesh = new Bol3D.Mesh(geo, mat)
+  mesh.name = '基准点'
+  mesh.visible = true
+  CACHE.group.add(mesh)
+  CACHE.container.scene.add(CACHE.group)
+}
 // function initParticle() {
 //   // const particlesOpts = {
 //   //   uuid: '520FE4E4-71A0-4049-98C1-4001C6E99CAB',
