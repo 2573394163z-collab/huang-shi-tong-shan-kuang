@@ -3,7 +3,7 @@ let _myMeshArr = []
 const pixelStream = null // UE 像素流
 const group = new Bol3D.Group()
 group.name = 'group'
-group.position.set(-300, 20, 650)
+group.position.set(-400, 2, 850)
 
 const xiangDao = null
 export const CACHE = {
