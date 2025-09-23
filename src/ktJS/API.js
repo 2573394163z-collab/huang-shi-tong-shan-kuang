@@ -36,7 +36,19 @@ function setBackground(imgName) {
   CACHE.container.updateBackground(STATE.PUBLIC_PATH, options)
 }
 
+//主场景贴图流动动画
+let angle = 0
+
+function animate() {
+  angle += 0.0009
+  if (CACHE.container && CACHE.container.sky) {
+    CACHE.container.sky.rotation.y = angle
+  }
+  requestAnimationFrame(animate)
+}
+
 export const API = {
   setBackground,
   cloneDeep,
+  animate,
 }

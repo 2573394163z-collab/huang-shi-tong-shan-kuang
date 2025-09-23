@@ -25,6 +25,7 @@ function init() {
   // initParticle()
   maoDian()
   initOrigin()
+  API.animate()
 }
 function initOrigin() {
   // const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2)
