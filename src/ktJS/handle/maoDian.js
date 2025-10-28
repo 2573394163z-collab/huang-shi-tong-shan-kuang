@@ -1,5 +1,5 @@
 import { CACHE } from '../CACHE'
-import { data } from './num'
+import { middle,top,bottom } from './num'
 function dian(data) {
   const geo = new Bol3D.SphereGeometry(2, 10, 10)
   const mat = new Bol3D.MeshPhongMaterial({ color: 0x00ff0f })
@@ -61,25 +61,61 @@ function createLabel(text) {
   return sprite
 }
 
-function handlePos(data) {
-  data.location = [data.position.x, 0, data.position.y]
-  return data
-}
+// function handlePos(data) {
+//   data.location = [data.position.x, 0, data.position.y]
+//   return data
+// }
 
 function maoDian() {
-  for (let i = 0; i < data.length; i++) {
-    handlePos(data[i])
+  for (let i = 0; i < middle.length; i++) {
+    middle.location = [middle[i].position.x, 0, middle[i].position.y]
 
     // 小球
-    const mesh = dian(data[i].location)
-    mesh.name = data[i].name // 给 mesh 设置逻辑名称
+    const mesh = dian(middle.location)
+    mesh.name = middle[i].name // 给 mesh 设置逻辑名称
 
     // 文字标签
-    const label = createLabel(data[i].name)
+    const label = createLabel(middle[i].name)
     label.position.set(
-      data[i].location[0],
-      data[i].location[1] + 10, // 在小球上方一点
-      data[i].location[2]
+      middle.location[0],
+      middle.location[1] + 5, // 在小球上方一点
+      middle.location[2]
+    )
+
+    CACHE.group.add(mesh)
+    CACHE.group.add(label)
+  }
+    for (let i = 0; i < top.length; i++) {
+    top.location = [top[i].position.x, 11, top[i].position.y]
+
+    // 小球
+    const mesh = dian(top.location)
+    mesh.name = top[i].name // 给 mesh 设置逻辑名称
+
+    // 文字标签
+    const label = createLabel(top[i].name)
+    label.position.set(
+      top.location[0],
+      top.location[1] + 5, // 在小球上方一点
+      top.location[2]
+    )
+
+    CACHE.group.add(mesh)
+    CACHE.group.add(label)
+  }
+    for (let i = 0; i < bottom.length; i++) {
+    bottom.location = [bottom[i].position.x, -14, bottom[i].position.y]
+
+    // 小球
+    const mesh = dian(bottom.location)
+    mesh.name = bottom[i].name // 给 mesh 设置逻辑名称
+
+    // 文字标签
+    const label = createLabel(bottom[i].name)
+    label.position.set(
+      bottom.location[0],
+      bottom.location[1]+5, // 在小球上方一点
+      bottom.location[2]
     )
 
     CACHE.group.add(mesh)

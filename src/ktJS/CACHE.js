@@ -5,11 +5,16 @@ const group = new Bol3D.Group()
 group.name = 'group'
 group.position.set(-400, 2, 850)
 
-const xiangDao = null
+const xiangDao1 = null
+const xiangDao2 = null
+const xiangDao3 = null
+
 export const CACHE = {
   container,
   _myMeshArr,
   pixelStream,
   group,
-  xiangDao,
+  xiangDao1,
+  xiangDao2,
+  xiangDao3,
 }

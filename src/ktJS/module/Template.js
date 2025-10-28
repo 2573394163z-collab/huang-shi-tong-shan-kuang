@@ -58,7 +58,7 @@ const Template = {
       panoramaEncoding: 3001,
     },
   },
-  modelUrls: ['/model/1.glb'],
+  modelUrls: ['/model/1.glb', '/model/-160.glb','/model/-190.glb'],
   hdrUrls: ['/hdr/1.hdr'],
   enableShadow: true,
   antiShake: false,
